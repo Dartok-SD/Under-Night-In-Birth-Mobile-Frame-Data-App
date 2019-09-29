@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UNI_FrameData</string>
+    <string name="title_home">Frame Data</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="picture_frame_data">Picture Frame Data</string>
+    <string name="text_only_frame_data">Text Only Frame Data</string>
+</resources>
