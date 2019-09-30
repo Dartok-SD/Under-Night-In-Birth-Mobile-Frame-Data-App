@@ -17,6 +17,7 @@ import com.example.uni_framedata.R;
 public class TextlessFrameDataFragment extends Fragment {
 
     private TextlessFrameDataViewModel mViewModel;
+    private String character = "";
 
     public static TextlessFrameDataFragment newInstance() {
         return new TextlessFrameDataFragment();
@@ -32,6 +33,10 @@ public class TextlessFrameDataFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(TextlessFrameDataViewModel.class);
+        Bundle args = getArguments();
+        if(args != null) {
+            character = args.getString("character");
+        }
         // TODO: Use the ViewModel
     }
 
