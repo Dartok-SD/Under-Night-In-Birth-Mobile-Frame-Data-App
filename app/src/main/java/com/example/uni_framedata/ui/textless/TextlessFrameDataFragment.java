@@ -37,7 +37,9 @@ public class TextlessFrameDataFragment extends Fragment {
         if(args != null) {
             character = args.getString("character");
         }
-        init(view);
+        if(savedInstanceState == null){
+            init(view);
+        }
         return view;
     }
     public void init(View view){
@@ -45,10 +47,6 @@ public class TextlessFrameDataFragment extends Fragment {
         TableRow tb_row0 = new TableRow(this.getContext());
         TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.WRAP_CONTENT);
         tb_row0.setLayoutParams(lp);
-//        TextView tv = new TextView(this.getContext());
-//        tv.setText("                  ");
-//        tv.setGravity(Gravity.CENTER);
-//        tb_row0.addView(tv);
 
         TextView tv_0 = new TextView(this.getContext());
         tv_0.setText(" Move ");
@@ -105,6 +103,8 @@ public class TextlessFrameDataFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(TextlessFrameDataViewModel.class);
+        if(savedInstanceState != null) {
+        }
 
         // TODO: Use the ViewModel
     }
