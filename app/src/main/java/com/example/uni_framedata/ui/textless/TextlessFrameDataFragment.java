@@ -2,6 +2,7 @@ package com.example.uni_framedata.ui.textless;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -17,6 +18,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.example.uni_framedata.DatabaseTable;
 import com.example.uni_framedata.R;
 
 public class TextlessFrameDataFragment extends Fragment {
@@ -95,6 +97,8 @@ public class TextlessFrameDataFragment extends Fragment {
 
         tableLayout.addView(tb_row0);
 
+        DatabaseTable db = new DatabaseTable(this.getContext());
+        Cursor c = db.getCharacterMatches(character,null);
         for(int i = 0; i < 3; i++){
 
         }
