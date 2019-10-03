@@ -5,6 +5,6 @@
 
  Hyde Frame Data added, more frame data to be added hopefully soonish.
  
- ![Menu](\app\images\Menu.png)
+ ![Menu](app\images\Menu.png)
  
- ![Hyde Data](\app\images\Hyde Textless Frame Data.png)
+ ![HydeData](app\images\Hyde Textless Frame Data.png)
