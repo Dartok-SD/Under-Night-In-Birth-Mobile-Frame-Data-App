@@ -91,19 +91,19 @@ public class TextlessFrameDataFragment extends Fragment {
         tv_7.setTextColor(Color.BLACK);
         tb_row0.addView(tv_7);
 
-        TextView tv_8 = new TextView(this.getContext());
-        tv_8.setText(" Recovery ");
-        tv_8.setTextColor(Color.BLACK);
-        tb_row0.addView(tv_8);
+//        TextView tv_8 = new TextView(this.getContext());
+//        tv_8.setText(" Recovery ");
+//        tv_8.setTextColor(Color.BLACK);
+//        tb_row0.addView(tv_8);
 
         TextView tv_9 = new TextView(this.getContext());
-        tv_7.setText(" Invicibility ");
-        tv_7.setTextColor(Color.BLACK);
+        tv_9.setText(" Invicibility ");
+        tv_9.setTextColor(Color.BLACK);
         tb_row0.addView(tv_9);
 
         TextView tv_10 = new TextView(this.getContext());
-        tv_8.setText(" Attribute ");
-        tv_8.setTextColor(Color.BLACK);
+        tv_10.setText(" Attribute ");
+        tv_10.setTextColor(Color.BLACK);
         tb_row0.addView(tv_10);
 
         tableLayout.addView(tb_row0);
@@ -135,12 +135,12 @@ public class TextlessFrameDataFragment extends Fragment {
             tb_row.addView(tvf_2);
 
             TextView tvf_3 = new TextView(this.getContext());
-            tvf_3.setText(thisMove.getStartup());
+            tvf_3.setText(thisMove.getActive());
             tvf_3.setTextColor(Color.BLACK);
             tb_row.addView(tvf_3);
 
             TextView tvf_4 = new TextView(this.getContext());
-            tvf_4.setText(thisMove.getStartup());
+            tvf_4.setText(thisMove.getRecovery());
             tvf_4.setTextColor(Color.BLACK);
             tb_row.addView(tvf_4);
 
@@ -159,10 +159,10 @@ public class TextlessFrameDataFragment extends Fragment {
             tvf_7.setTextColor(Color.BLACK);
             tb_row.addView(tvf_7);
 
-            TextView tvf_8 = new TextView(this.getContext());
-            tvf_8.setText(thisMove.getRecovery());
-            tvf_8.setTextColor(Color.BLACK);
-            tb_row.addView(tvf_8);
+//            TextView tvf_8 = new TextView(this.getContext());
+//            tvf_8.setText(thisMove.getRecovery());
+//            tvf_8.setTextColor(Color.BLACK);
+//            tb_row.addView(tvf_8);
 
             TextView tvf_9 = new TextView(this.getContext());
             tvf_9.setText(thisMove.getInvincibility());
