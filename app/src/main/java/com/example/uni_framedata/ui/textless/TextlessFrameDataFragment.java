@@ -19,6 +19,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.example.uni_framedata.DatabaseTable;
+import com.example.uni_framedata.LoadCharacterFrameData;
 import com.example.uni_framedata.R;
 
 public class TextlessFrameDataFragment extends Fragment {
@@ -96,9 +97,10 @@ public class TextlessFrameDataFragment extends Fragment {
         tb_row0.addView(tv_8);
 
         tableLayout.addView(tb_row0);
-
-        DatabaseTable db = new DatabaseTable(this.getContext());
-        Cursor c = db.getCharacterMatches(character,null);
+//
+//        DatabaseTable db = new DatabaseTable(this.getContext());
+//        Cursor c = db.getCharacterMatches(character,null);
+        LoadCharacterFrameData hydeFrames = new LoadCharacterFrameData("hyde",this.getContext());
         for(int i = 0; i < 3; i++){
 
         }
