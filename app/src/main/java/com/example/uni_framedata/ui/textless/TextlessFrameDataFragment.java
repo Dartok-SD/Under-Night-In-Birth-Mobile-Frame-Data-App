@@ -110,14 +110,14 @@ public class TextlessFrameDataFragment extends Fragment {
 //
 //        DatabaseTable db = new DatabaseTable(this.getContext());
 //        Cursor c = db.getCharacterMatches(character,null);
-        LoadCharacterFrameData hydeFrames = new LoadCharacterFrameData("hyde",this.getContext());
-        for(int i = 0; i < hydeFrames.getMoves().size(); i++){
+        LoadCharacterFrameData characterFrames = new LoadCharacterFrameData(character.toLowerCase(),this.getContext());
+        for(int i = 0; i < characterFrames.getMoves().size(); i++){
 
             TableRow tb_row = new TableRow(this.getContext());
             TableRow.LayoutParams lp1 = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.WRAP_CONTENT);
             tb_row.setLayoutParams(lp1);
 
-            LoadCharacterFrameData.MoveData thisMove = hydeFrames.getMoves().get(i);
+            LoadCharacterFrameData.MoveData thisMove = characterFrames.getMoves().get(i);
 
             TextView tvf_0 = new TextView(this.getContext());
             tvf_0.setText(thisMove.getName());
