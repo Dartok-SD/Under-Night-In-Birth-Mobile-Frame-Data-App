@@ -96,13 +96,85 @@ public class TextlessFrameDataFragment extends Fragment {
         tv_8.setTextColor(Color.BLACK);
         tb_row0.addView(tv_8);
 
+        TextView tv_9 = new TextView(this.getContext());
+        tv_7.setText(" Invicibility ");
+        tv_7.setTextColor(Color.BLACK);
+        tb_row0.addView(tv_9);
+
+        TextView tv_10 = new TextView(this.getContext());
+        tv_8.setText(" Attribute ");
+        tv_8.setTextColor(Color.BLACK);
+        tb_row0.addView(tv_10);
+
         tableLayout.addView(tb_row0);
 //
 //        DatabaseTable db = new DatabaseTable(this.getContext());
 //        Cursor c = db.getCharacterMatches(character,null);
         LoadCharacterFrameData hydeFrames = new LoadCharacterFrameData("hyde",this.getContext());
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < hydeFrames.getMoves().size(); i++){
 
+            TableRow tb_row = new TableRow(this.getContext());
+            TableRow.LayoutParams lp1 = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.WRAP_CONTENT);
+            tb_row.setLayoutParams(lp1);
+
+            LoadCharacterFrameData.MoveData thisMove = hydeFrames.getMoves().get(i);
+
+            TextView tvf_0 = new TextView(this.getContext());
+            tvf_0.setText(thisMove.getName());
+            tvf_0.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_0);
+
+            TextView tvf_1 = new TextView(this.getContext());
+            tvf_1.setText(thisMove.getDamage());
+            tvf_1.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_1);
+
+            TextView tvf_2 = new TextView(this.getContext());
+            tvf_2.setText(thisMove.getStartup());
+            tvf_2.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_2);
+
+            TextView tvf_3 = new TextView(this.getContext());
+            tvf_3.setText(thisMove.getStartup());
+            tvf_3.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_3);
+
+            TextView tvf_4 = new TextView(this.getContext());
+            tvf_4.setText(thisMove.getStartup());
+            tvf_4.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_4);
+
+            TextView tvf_5 = new TextView(this.getContext());
+            tvf_5.setText(thisMove.getFrameadv());
+            tvf_5.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_5);
+
+            TextView tvf_6 = new TextView(this.getContext());
+            tvf_6.setText(thisMove.getCancel());
+            tvf_6.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_6);
+
+            TextView tvf_7 = new TextView(this.getContext());
+            tvf_7.setText(thisMove.getGuard());
+            tvf_7.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_7);
+
+            TextView tvf_8 = new TextView(this.getContext());
+            tvf_8.setText(thisMove.getRecovery());
+            tvf_8.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_8);
+
+            TextView tvf_9 = new TextView(this.getContext());
+            tvf_9.setText(thisMove.getInvincibility());
+            tvf_9.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_9);
+
+            TextView tvf_10 = new TextView(this.getContext());
+            tvf_10.setText(thisMove.getAttribute());
+            tvf_10.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_10);
+
+            tableLayout.addView(tb_row);
         }
     }
     @Override

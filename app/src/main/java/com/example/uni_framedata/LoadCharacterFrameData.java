@@ -20,6 +20,7 @@ public class LoadCharacterFrameData {
     public LoadCharacterFrameData(String character, Context context) {
         this.character = character;
         myContext = context;
+        moves = new ArrayList<MoveData>();
         try {
             loadWords();
         } catch(IOException e){
@@ -30,7 +31,7 @@ public class LoadCharacterFrameData {
     private void loadWords() throws IOException {
         final Resources resources = myContext.getResources();
         InputStream inputStream = resources.openRawResource(R.raw.framedata);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "Unicode"));
 
         try {
             String line;
@@ -44,7 +45,7 @@ public class LoadCharacterFrameData {
                     continue;
                 }
                 name = strings[i++];
-                if (isNumeric(strings[i+1])) {
+                if (isNumeric(strings[i])) {
                     input = "";
                 } else {
                     input = strings[i++];
