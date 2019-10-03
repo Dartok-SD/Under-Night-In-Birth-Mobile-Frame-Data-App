@@ -55,14 +55,15 @@ public class LoadCharacterFrameData {
                 startup = strings[i++];
                 active = strings[i++];
                 recovery = strings[i++];
+                String total = strings[i++];
                 frameadv = strings[i++];
                 cancel = strings[i++];
-                if(i+1 < strings.length && isNumeric(strings[i+1].substring(0,1))) {
+                if(i < strings.length && isNumeric(strings[i].substring(0,1))) {
                     invincibility = strings[i++];
                 } else {
                     invincibility = "None";
                 }
-                if(i+1 < strings.length){
+                if(i < strings.length){
                     attribute = strings[i++];
                 } else {
                     attribute = "None";
