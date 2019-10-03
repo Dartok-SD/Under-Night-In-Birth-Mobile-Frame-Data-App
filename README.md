@@ -5,6 +5,6 @@
 
  Hyde Frame Data added, more frame data to be added hopefully soonish.
  
- ![Menu](app\images\Menu.png)
+ ![Menu](https://github.com/Dartok-SD/Under-Night-In-Birth-Mobile-Frame-Data-App/blob/master/app/images/Menu.png)
  
- ![HydeData](app\images\Hyde Textless Frame Data.png)
+ ![HydeData](https://github.com/Dartok-SD/Under-Night-In-Birth-Mobile-Frame-Data-App/blob/master/app/images/Hyde%20Textless%20Frame%20Data.png)
