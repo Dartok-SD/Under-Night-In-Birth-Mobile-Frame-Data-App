@@ -49,7 +49,12 @@ public class TextlessFrameDataFragment extends Fragment {
         TableLayout tableLayout = (TableLayout) view.findViewById(R.id.tableLayoutProduct);
         TableRow tb_row0 = new TableRow(this.getContext());
         TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.WRAP_CONTENT);
-        tb_row0.setLayoutParams(lp);
+        TableLayout.LayoutParams layParams =
+                new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
+                        TableLayout.LayoutParams.WRAP_CONTENT);
+
+        layParams.setMargins(0,0,0,0);
+        tb_row0.setLayoutParams(layParams);
 
         TextView tv_0 = new TextView(this.getContext());
         tv_0.setText(" Move ");
@@ -106,7 +111,7 @@ public class TextlessFrameDataFragment extends Fragment {
         tv_10.setTextColor(Color.BLACK);
         tb_row0.addView(tv_10);
 
-        tableLayout.addView(tb_row0);
+        tableLayout.addView(tb_row0,layParams);
 //
 //        DatabaseTable db = new DatabaseTable(this.getContext());
 //        Cursor c = db.getCharacterMatches(character,null);
@@ -114,8 +119,24 @@ public class TextlessFrameDataFragment extends Fragment {
         for(int i = 0; i < characterFrames.getMoves().size(); i++){
 
             TableRow tb_row = new TableRow(this.getContext());
-            TableRow.LayoutParams lp1 = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.WRAP_CONTENT);
-            tb_row.setLayoutParams(lp1);
+//            TableRow.MarginLayoutParams lp1 = new TableRow.MarginLayoutParams(TableRow.LayoutParams.WRAP_CONTENT,TableRow.LayoutParams.WRAP_CONTENT);
+//            lp1.setMargins(0,0,0,40);
+//            TableRow.LayoutParams lp1 = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,TableRow.LayoutParams.WRAP_CONTENT);
+////            TableRow.MarginLayoutParams params = new TableRow.MarginLayoutParams(
+////                    TableLayout.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT);
+////            params.setMargins(10, 10, 10,
+////                    10);
+            TableLayout.LayoutParams layoutParams =
+                    new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
+                            TableLayout.LayoutParams.WRAP_CONTENT);
+
+            layoutParams.setMargins(10,10,10,10);
+            if(i == characterFrames.getMoves().size()-1){
+                layoutParams.setMargins(10,10,10,210);
+            }
+
+//            tr.setLayoutParams(lp);
+            tb_row.setLayoutParams(layoutParams);
 
             LoadCharacterFrameData.MoveData thisMove = characterFrames.getMoves().get(i);
 
@@ -174,7 +195,7 @@ public class TextlessFrameDataFragment extends Fragment {
             tvf_10.setTextColor(Color.BLACK);
             tb_row.addView(tvf_10);
 
-            tableLayout.addView(tb_row);
+            tableLayout.addView(tb_row,layoutParams);
         }
     }
     @Override
