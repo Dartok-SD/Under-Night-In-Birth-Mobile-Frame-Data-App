@@ -22,6 +22,7 @@ import com.example.uni_framedata.DatabaseTable;
 import com.example.uni_framedata.LoadCharacterFrameData;
 import com.example.uni_framedata.R;
 
+
 public class TextlessFrameDataFragment extends Fragment {
 
     private TextlessFrameDataViewModel mViewModel;
