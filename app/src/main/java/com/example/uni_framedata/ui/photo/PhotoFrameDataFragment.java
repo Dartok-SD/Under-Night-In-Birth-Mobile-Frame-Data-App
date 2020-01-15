@@ -38,17 +38,21 @@ public class PhotoFrameDataFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.photo_frame_data_fragment, container, false);
 //        myActivity = this.getActivity();
-        myTextView = view.findViewById(R.id.test_text_view);
+//        myTextView = view.findViewById(R.id.test_text_view);
 //        myTextView.setText(myActivity.getMyData());
         if(savedInstanceState != null) {
-            myTextView.setText(savedInstanceState.getString("character"));
+//            myTextView.setText(savedInstanceState.getString("character"));
         }
         Bundle args = getArguments();
         if(args != null) {
             character = args.getString("character");
         }
-        myTextView.setText(character);
+//        myTextView.setText(character);
         return view;
+    }
+
+    public void init(View view){
+
     }
 
     @Override
@@ -58,7 +62,7 @@ public class PhotoFrameDataFragment extends Fragment {
         // TODO: Use the ViewModel
         if(savedInstanceState != null) {
             character = savedInstanceState.getString("character");
-            myTextView.setText(savedInstanceState.getString("character"));
+//            myTextView.setText(savedInstanceState.getString("character"));
         }
 
     }
