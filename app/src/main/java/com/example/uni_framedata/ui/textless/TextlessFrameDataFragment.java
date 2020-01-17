@@ -44,7 +44,7 @@ public class TextlessFrameDataFragment extends Fragment {
         if(savedInstanceState == null){
             init(view);
         }
-        
+
         return view;
     }
     public void init(View view){
@@ -53,49 +53,57 @@ public class TextlessFrameDataFragment extends Fragment {
         TableRow tb_row0 = new TableRow(this.getContext());
 //        TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT);
         TableLayout.LayoutParams layParams =
-                new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
-                        TableLayout.LayoutParams.MATCH_PARENT);
+                new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,
+                        TableLayout.LayoutParams.WRAP_CONTENT);
         layParams.setMargins(0,0,0,0);
         tb_row0.setLayoutParams(layParams);
 
         TextView tv_0 = new TextView(this.getContext());
         tv_0.setText(" Move ");
         tv_0.setTextColor(Color.BLACK);
+//        tv_0.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_0);
 
         TextView tv_1 = new TextView(this.getContext());
         tv_1.setText(" Damage ");
         tv_1.setTextColor(Color.BLACK);
+//        tv_1.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_1);
 
         TextView tv_2 = new TextView(this.getContext());
         tv_2.setText(" Startup ");
         tv_2.setTextColor(Color.BLACK);
+//        tv_2.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_2);
 
         TextView tv_3 = new TextView(this.getContext());
         tv_3.setText(" Active ");
         tv_3.setTextColor(Color.BLACK);
+//        tv_3.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_3);
 
         TextView tv_4 = new TextView(this.getContext());
         tv_4.setText(" Recovery ");
         tv_4.setTextColor(Color.BLACK);
+//        tv_4.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_4);
 
         TextView tv_5 = new TextView(this.getContext());
         tv_5.setText(" Frame Adv ");
         tv_5.setTextColor(Color.BLACK);
+//        tv_5.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_5);
 
         TextView tv_6 = new TextView(this.getContext());
         tv_6.setText(" Cancel ");
         tv_6.setTextColor(Color.BLACK);
+//        tv_6.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_6);
 
         TextView tv_7 = new TextView(this.getContext());
         tv_7.setText(" Guard ");
         tv_7.setTextColor(Color.BLACK);
+//        tv_7.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_7);
 
 //        TextView tv_8 = new TextView(this.getContext());
@@ -106,11 +114,13 @@ public class TextlessFrameDataFragment extends Fragment {
         TextView tv_9 = new TextView(this.getContext());
         tv_9.setText(" Invicibility ");
         tv_9.setTextColor(Color.BLACK);
+//        tv_9.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_9);
 
         TextView tv_10 = new TextView(this.getContext());
         tv_10.setText(" Attribute ");
         tv_10.setTextColor(Color.BLACK);
+//        tv_10.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_10);
 
         tableLayout.addView(tb_row0,layParams);
@@ -129,8 +139,8 @@ public class TextlessFrameDataFragment extends Fragment {
 ////            params.setMargins(10, 10, 10,
 ////                    10);
             TableLayout.LayoutParams layoutParams =
-                    new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT,
-                            TableLayout.LayoutParams.MATCH_PARENT);
+                    new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,
+                            TableLayout.LayoutParams.WRAP_CONTENT);
 
             layoutParams.setMargins(10,10,10,10);
             if(i == characterFrames.getMoves().size()-1){
@@ -145,56 +155,56 @@ public class TextlessFrameDataFragment extends Fragment {
             TextView tvf_0 = new TextView(this.getContext());
             tvf_0.setText(thisMove.getName());
             tvf_0.setTextColor(Color.BLACK);
-            tvf_0.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_0.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
 
             tb_row.addView(tvf_0);
 
             TextView tvf_1 = new TextView(this.getContext());
             tvf_1.setText(thisMove.getDamage());
             tvf_1.setTextColor(Color.BLACK);
-            tvf_1.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_1.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
 
             tb_row.addView(tvf_1);
 
             TextView tvf_2 = new TextView(this.getContext());
             tvf_2.setText(thisMove.getStartup());
             tvf_2.setTextColor(Color.BLACK);
-            tvf_2.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_2.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
 
             tb_row.addView(tvf_2);
 
             TextView tvf_3 = new TextView(this.getContext());
             tvf_3.setText(thisMove.getActive());
             tvf_3.setTextColor(Color.BLACK);
-            tvf_3.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_3.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
 
             tb_row.addView(tvf_3);
 
             TextView tvf_4 = new TextView(this.getContext());
             tvf_4.setText(thisMove.getRecovery());
             tvf_4.setTextColor(Color.BLACK);
-            tvf_4.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_4.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
 
             tb_row.addView(tvf_4);
 
             TextView tvf_5 = new TextView(this.getContext());
             tvf_5.setText(thisMove.getFrameadv());
             tvf_5.setTextColor(Color.BLACK);
-            tvf_5.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_5.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
 
             tb_row.addView(tvf_5);
 
             TextView tvf_6 = new TextView(this.getContext());
             tvf_6.setText(thisMove.getCancel());
             tvf_6.setTextColor(Color.BLACK);
-            tvf_6.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_6.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
 
             tb_row.addView(tvf_6);
 
             TextView tvf_7 = new TextView(this.getContext());
             tvf_7.setText(thisMove.getGuard());
             tvf_7.setTextColor(Color.BLACK);
-            tvf_7.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_7.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
             tb_row.addView(tvf_7);
 
 //            TextView tvf_8 = new TextView(this.getContext());
@@ -205,13 +215,13 @@ public class TextlessFrameDataFragment extends Fragment {
             TextView tvf_9 = new TextView(this.getContext());
             tvf_9.setText(thisMove.getInvincibility());
             tvf_9.setTextColor(Color.BLACK);
-            tvf_9.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_9.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
             tb_row.addView(tvf_9);
 
             TextView tvf_10 = new TextView(this.getContext());
             tvf_10.setText(thisMove.getAttribute());
             tvf_10.setTextColor(Color.BLACK);
-            tvf_10.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+//            tvf_10.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
             tb_row.addView(tvf_10);
 
             tableLayout.addView(tb_row,layoutParams);

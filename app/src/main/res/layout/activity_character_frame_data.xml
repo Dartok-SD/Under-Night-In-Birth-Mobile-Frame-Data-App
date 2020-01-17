@@ -5,8 +5,7 @@
     android:id="@+id/activity_frame_data"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".CharacterFrameDataActivity">
+    >
 
     <!--    app:navGraph="@navigation/simplicity_navigation"-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -30,7 +29,6 @@
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/simplicity_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/simplicity_navigation" />
