@@ -6,27 +6,49 @@
     android:layout_height="fill_parent"
     tools:context=".ui.textless.TextlessFrameDataFragment">
 
-    <ScrollView
-        android:id="@+id/displayTable"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <HorizontalScrollView
-            android:id="@+id/horizontal_scroll_view"
+    <com.example.uni_framedata.ui.TwoDScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableLayout
+            android:id="@+id/tableLayoutProduct"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-            <TableLayout
-                android:id="@+id/tableLayoutProduct"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+        </TableLayout>
+    </com.example.uni_framedata.ui.TwoDScrollView>
+<!--    <ScrollView-->
+<!--        android:id="@+id/displayTable"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="fill_parent"-->
+<!--        android:scrollbars="none"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-            </TableLayout>
-        </HorizontalScrollView>
-    </ScrollView>
+<!--        <HorizontalScrollView-->
+<!--            android:id="@+id/horizontal_scroll_view"-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="fill_parent">-->
+
+<!--            <TableLayout-->
+<!--                android:id="@+id/tableLayoutProduct"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="fill_parent">-->
+
+<!--            </TableLayout>-->
+<!--        </HorizontalScrollView>-->
+<!--    </ScrollView>-->
+<!--    <com.scrollable.view.VScroll android:layout_height="fill_parent"-->
+<!--        android:layout_width="fill_parent" android:id="@+id/vScroll">-->
+<!--        <com.scrollable.view.HScroll android:id="@+id/hScroll"-->
+<!--            android:layout_width="fill_parent" android:layout_height="fill_parent">-->
+<!--            <TableLayout-->
+<!--                android:id="@+id/tableLayoutProduct"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="fill_parent">-->
+
+<!--            </TableLayout>-->
+<!--        </com.scrollable.view.HScroll>-->
+<!--    </com.scrollable.view.VScroll>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
