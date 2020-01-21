@@ -3,6 +3,7 @@ package com.example.uni_framedata.ui.photo;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.example.uni_framedata.CharacterFrameDataActivity;
@@ -20,17 +24,13 @@ import com.example.uni_framedata.R;
 public class PhotoFrameDataFragment extends Fragment {
 
     private PhotoFrameDataViewModel mViewModel;
-    private CharacterFrameDataActivity myActivity;
+    private Activity myActivity;
     private TextView myTextView;
-//    private Boolean foundChara = false;
     private String character = "";
+
+    //    private Boolean foundChara = false;
     public static PhotoFrameDataFragment newInstance() {
         return new PhotoFrameDataFragment();
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -40,19 +40,40 @@ public class PhotoFrameDataFragment extends Fragment {
 //        myActivity = this.getActivity();
 //        myTextView = view.findViewById(R.id.test_text_view);
 //        myTextView.setText(myActivity.getMyData());
-        if(savedInstanceState != null) {
-//            myTextView.setText(savedInstanceState.getString("character"));
-        }
+        myActivity = getActivity();
         Bundle args = getArguments();
         if(args != null) {
             character = args.getString("character");
         }
-//        myTextView.setText(character);
+        init(view);
+        if(savedInstanceState != null) {
+
+        }
         return view;
     }
 
     public void init(View view){
+        TableLayout tableLayout = (TableLayout) view.findViewById(R.id.tableLayoutProduct);
+        TableRow tb_row0 = new TableRow(this.getContext());
+//        TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,TableRow.LayoutParams.MATCH_PARENT);
+        TableLayout.LayoutParams layParams =
+                new TableLayout.LayoutParams(TableLayout.LayoutParams.WRAP_CONTENT,
+                        TableLayout.LayoutParams.WRAP_CONTENT);
+        layParams.setMargins(0,0,0,0);
+        tb_row0.setLayoutParams(layParams);
 
+        TextView tv_0 = new TextView(this.getContext());
+        tv_0.setText(character);
+        tv_0.setTextColor(Color.BLACK);
+//        tv_0.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
+        tb_row0.addView(tv_0);
+
+        ImageView img = new ImageView(this.getContext());
+        int resource = myActivity.getResources().getIdentifier("@drawable/" + character.toLowerCase() + "2a"
+                ,null,myActivity.getPackageName());
+        img.setImageResource(resource);
+        tb_row0.addView(img);
+        tableLayout.addView(tb_row0,layParams);
     }
 
     @Override

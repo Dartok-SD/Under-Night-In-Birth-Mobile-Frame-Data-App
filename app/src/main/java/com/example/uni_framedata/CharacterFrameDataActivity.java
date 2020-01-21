@@ -73,13 +73,13 @@ public class CharacterFrameDataActivity extends AppCompatActivity{
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                     switch(menuItem.getItemId()){
                         case R.id.framedata_only_photo:
-//                            myFm.beginTransaction().hide(active).show(frag1).commit();
-//                            active = frag1;
+                            myFm.beginTransaction().hide(active).show(frag1).commit();
+                            active = frag1;
                             loadFragment(frag1);
                             return true;
                         case R.id.framedata_only_text:
-//                            myFm.beginTransaction().hide(active).show(frag2).commit();
-//                            active = frag2;
+                            myFm.beginTransaction().hide(active).show(frag2).commit();
+                            active = frag2;
                             loadFragment(frag2);
                             return true;
                     }
@@ -110,6 +110,9 @@ public class CharacterFrameDataActivity extends AppCompatActivity{
         // transaction.addToBackStack(null);
         /* Comment this line and it should work!*/
         //transaction.addToBackStack(null);
+        Bundle newBundle = new Bundle();
+        newBundle.putString("character", character);
+        fragment.setArguments(newBundle);
         transaction.commit();
     }
 }

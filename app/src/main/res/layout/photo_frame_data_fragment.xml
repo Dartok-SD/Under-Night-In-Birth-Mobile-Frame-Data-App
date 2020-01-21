@@ -6,25 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.photo.PhotoFrameDataFragment">
 
-    <ScrollView
-        android:id="@+id/displayTable"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
-
-        <HorizontalScrollView
-            android:id="@+id/horizontal_scroll_view"
+    <com.example.uni_framedata.ui.TwoDScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableLayout
+            android:id="@+id/tableLayoutProduct"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="fill_parent">
 
-            <TableLayout
-                android:id="@+id/tableLayoutProduct"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true" >
-
-            </TableLayout>
-        </HorizontalScrollView>
-    </ScrollView>
+        </TableLayout>
+    </com.example.uni_framedata.ui.TwoDScrollView>
 
 </FrameLayout>
