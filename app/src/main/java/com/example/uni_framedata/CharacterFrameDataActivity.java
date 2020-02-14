@@ -11,7 +11,9 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -27,7 +29,7 @@ public class CharacterFrameDataActivity extends AppCompatActivity{
     private Fragment frag2 = new TextlessFrameDataFragment();
     private Fragment active = frag1;
     private FragmentManager myFm = getSupportFragmentManager();
-
+    private final static String TAG  = "TEST";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,16 +58,30 @@ public class CharacterFrameDataActivity extends AppCompatActivity{
         BottomNavigationView navView = findViewById(R.id.simplicity_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.framedata_only_photo, R.id.framedata_only_text)
-//                .build();
-//        NavController navController = Navigation.findNavController(this, R.id.simplicity_nav_host);
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-//        NavigationUI.setupWithNavController(navView, navController);
-        navView.setOnNavigationItemSelectedListener(myOnNavigationItemSelectedListener);
-//        myFm.beginTransaction().add(R.id.activity_frame_data,frag2).hide(frag2).commit();
-//        myFm.beginTransaction().add(R.id.activity_frame_data,frag1).commit();
+        //        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+        //                R.id.framedata_only_photo, R.id.framedata_only_text)
+        //                .build();
+        //        NavController navController = Navigation.findNavController(this, R.id.simplicity_nav_host);
+        //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        //        NavigationUI.setupWithNavController(navView, navController);
+//        myFm.beginTransaction().add(R.id.activity_frame_data,frag1);
+//        if(savedInstanceState == null){
+            myFm.beginTransaction().hide(frag2).commit();
 
+            myFm.beginTransaction().show(frag1).commit();
+            active = frag1;
+//        }
+        navView.setOnNavigationItemSelectedListener(myOnNavigationItemSelectedListener);
+        Log.i(TAG,"onCreate");
+//        active = frag1;
+    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        myFm.beginTransaction().hide(frag2).show(frag1).commit();
+        active = frag1;
+        loadFragment(frag1);
+        Log.i(TAG,"onStart");
     }
     private BottomNavigationView.OnNavigationItemSelectedListener myOnNavigationItemSelectedListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -73,17 +89,25 @@ public class CharacterFrameDataActivity extends AppCompatActivity{
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                     switch(menuItem.getItemId()){
                         case R.id.framedata_only_photo:
+                            System.out.printf("Does the listener even trigger? %d\n", menuItem.getItemId());
                             myFm.beginTransaction().hide(active).show(frag1).commit();
                             active = frag1;
                             loadFragment(frag1);
                             return true;
                         case R.id.framedata_only_text:
+                            System.out.printf("Does the listener even trigger? %d\n", menuItem.getItemId());
                             myFm.beginTransaction().hide(active).show(frag2).commit();
                             active = frag2;
                             loadFragment(frag2);
                             return true;
+                        default:
+                            System.out.printf("Does the listener even trigger? %d\n", menuItem.getItemId());
+                            active = frag1;
+                            myFm.beginTransaction().show(active).commit();
+                            loadFragment(frag1);
+                            return true;
                     }
-                    return false;
+//                    return false;
                 }
             };
     @Override
