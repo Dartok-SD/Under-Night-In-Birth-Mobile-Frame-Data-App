@@ -19,6 +19,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.example.uni_framedata.CharacterFrameDataActivity;
+import com.example.uni_framedata.LoadCharacterFrameData;
 import com.example.uni_framedata.R;
 
 public class PhotoFrameDataFragment extends Fragment {
@@ -67,13 +68,19 @@ public class PhotoFrameDataFragment extends Fragment {
         tv_0.setTextColor(Color.BLACK);
 //        tv_0.setLayoutParams( new TableRow.LayoutParams( 0, android.view.ViewGroup.LayoutParams.MATCH_PARENT, 1 ) );
         tb_row0.addView(tv_0);
+        LoadCharacterFrameData characterFrames = new LoadCharacterFrameData(character.toLowerCase(),this.getContext());
 
-        ImageView img = new ImageView(this.getContext());
-        int resource = myActivity.getResources().getIdentifier("@drawable/" + character.toLowerCase() + "2a"
-                ,null,myActivity.getPackageName());
-        img.setImageResource(resource);
-        tb_row0.addView(img);
-        tableLayout.addView(tb_row0,layParams);
+        for(int i = 0; i < characterFrames.getMoves().size(); i++) {
+            TableRow tb_row = new TableRow(this.getContext());
+            LoadCharacterFrameData.MoveData thisMove = characterFrames.getMoves().get(i);
+
+            ImageView img = new ImageView(this.getContext());
+            int resource = myActivity.getResources().getIdentifier("@drawable/" + character.toLowerCase() + thisMove.getName().toLowerCase().replaceAll("[^a-zA-Z0-9]", "")
+                    , null, myActivity.getPackageName());
+            img.setImageResource(resource);
+            tb_row.addView(img);
+            tableLayout.addView(tb_row, layParams);
+        }
     }
 
     @Override
