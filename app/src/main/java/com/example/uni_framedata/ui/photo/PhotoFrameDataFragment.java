@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -77,8 +78,22 @@ public class PhotoFrameDataFragment extends Fragment {
             ImageView img = new ImageView(this.getContext());
             int resource = myActivity.getResources().getIdentifier("@drawable/" + character.toLowerCase() + thisMove.getName().toLowerCase().replaceAll("[^a-zA-Z0-9]", "")
                     , null, myActivity.getPackageName());
+            if(resource == 0){
+                // default image
+                resource = myActivity.getResources().getIdentifier("@drawable/default"+character.toLowerCase()
+                        , null, myActivity.getPackageName());
+                System.out.printf("Default picture Default Name: %s, was it found %d\n", "default"+character.toLowerCase(), resource);
+            }
             img.setImageResource(resource);
+            TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(200, 200);
+            img.setLayoutParams(layoutParams);
             tb_row.addView(img);
+
+            TextView tvf_0 = new TextView(this.getContext());
+            tvf_0.setText(thisMove.getName());
+            tvf_0.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_0);
+
             tableLayout.addView(tb_row, layParams);
         }
     }
