@@ -79,6 +79,14 @@ public class PhotoFrameDataFragment extends Fragment {
             int resource = myActivity.getResources().getIdentifier("@drawable/" + character.toLowerCase() + thisMove.getName().toLowerCase().replaceAll("[^a-zA-Z0-9]", "")
                     , null, myActivity.getPackageName());
             if(resource == 0){
+                resource = myActivity.getResources().getIdentifier("@drawable/" + character.toLowerCase() + LoadCharacterFrameData.tryDifferentName(thisMove.getName())
+                        , null, myActivity.getPackageName());
+            }
+            if(resource == 0){
+                resource = myActivity.getResources().getIdentifier("@drawable/" + character.toLowerCase() + LoadCharacterFrameData.convertInput(thisMove.getInput())
+                        , null, myActivity.getPackageName());
+            }
+            if(resource == 0){
                 // default image
                 resource = myActivity.getResources().getIdentifier("@drawable/default"+character.toLowerCase()
                         , null, myActivity.getPackageName());
@@ -93,6 +101,61 @@ public class PhotoFrameDataFragment extends Fragment {
             tvf_0.setText(thisMove.getName());
             tvf_0.setTextColor(Color.BLACK);
             tb_row.addView(tvf_0);
+            TextView tvf_1 = new TextView(this.getContext());
+            tvf_1.setText(thisMove.getDamage());
+            tvf_1.setTextColor(Color.BLACK);
+
+            tb_row.addView(tvf_1);
+
+            TextView tvf_2 = new TextView(this.getContext());
+            tvf_2.setText(thisMove.getStartup());
+            tvf_2.setTextColor(Color.BLACK);
+
+            tb_row.addView(tvf_2);
+
+            TextView tvf_3 = new TextView(this.getContext());
+            tvf_3.setText(thisMove.getActive());
+            tvf_3.setTextColor(Color.BLACK);
+
+            tb_row.addView(tvf_3);
+
+            TextView tvf_4 = new TextView(this.getContext());
+            tvf_4.setText(thisMove.getRecovery());
+            tvf_4.setTextColor(Color.BLACK);
+
+            tb_row.addView(tvf_4);
+
+            TextView tvf_5 = new TextView(this.getContext());
+            tvf_5.setText(thisMove.getFrameadv());
+            tvf_5.setTextColor(Color.BLACK);
+
+            tb_row.addView(tvf_5);
+
+            TextView tvf_6 = new TextView(this.getContext());
+            tvf_6.setText(thisMove.getCancel());
+            tvf_6.setTextColor(Color.BLACK);
+
+            tb_row.addView(tvf_6);
+
+            TextView tvf_7 = new TextView(this.getContext());
+            tvf_7.setText(thisMove.getGuard());
+            tvf_7.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_7);
+
+            TextView tvf_8 = new TextView(this.getContext());
+            tvf_8.setText(thisMove.getRecovery());
+            tvf_8.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_8);
+
+            TextView tvf_9 = new TextView(this.getContext());
+            tvf_9.setText(thisMove.getInvincibility());
+            tvf_9.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_9);
+
+            TextView tvf_10 = new TextView(this.getContext());
+            tvf_10.setText(thisMove.getAttribute());
+            tvf_10.setTextColor(Color.BLACK);
+            tb_row.addView(tvf_10);
 
             tableLayout.addView(tb_row, layParams);
         }

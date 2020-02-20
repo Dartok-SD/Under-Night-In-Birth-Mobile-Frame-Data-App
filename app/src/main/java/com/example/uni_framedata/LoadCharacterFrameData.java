@@ -17,6 +17,64 @@ public class LoadCharacterFrameData {
     private Context myContext;
     private ArrayList<MoveData> moves;
 
+    public static String tryDifferentName(String name){
+        String output = "";
+        for(int i = 0; i < name.length(); i++){
+            char add = name.toLowerCase().charAt(i);
+            if(add == 'a' || add == 'b' || add == 'c' || add == 'd'){
+                output += 'x';
+            } else {
+                output += add;
+            }
+        }
+        return output.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
+    }
+    public static String convertInput(String input){
+        String finalInput = "";
+        String prev = "";
+        for(int i = 0; i < input.length(); i++){
+            char add = convertInputHelper(input.charAt(i));
+            if (add != '+') {
+                prev = "";
+            }
+            if(add != Character.MIN_VALUE){
+                finalInput += add;
+                prev += add;
+            }
+        }
+        return finalInput;
+    }
+    public static char convertInputHelper(char input){
+        switch(input){
+            case 'A':
+                return 'a';
+            case 'B':
+                return 'b';
+            case 'C':
+                return 'c';
+            case 'D':
+                return 'd';
+            case '↑':
+                return '8';
+            case '↗':
+                return '9';
+            case '→':
+                return '6';
+            case '↘':
+                return '3';
+            case '↓':
+                return '2';
+            case '↙':
+                return '1';
+            case '←':
+                return '4';
+            case '↖':
+                return '7';
+            default:
+                return Character.MIN_VALUE;
+        }
+    }
+
     public LoadCharacterFrameData(String character, Context context) {
         this.character = character;
         myContext = context;
