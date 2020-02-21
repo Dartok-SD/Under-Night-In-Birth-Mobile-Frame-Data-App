@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.example.uni_framedata.CharacterFrameDataActivity;
 import com.example.uni_framedata.LoadCharacterFrameData;
 import com.example.uni_framedata.R;
+import com.squareup.picasso.*;
 
 public class PhotoFrameDataFragment extends Fragment {
 
@@ -92,9 +93,11 @@ public class PhotoFrameDataFragment extends Fragment {
                         , null, myActivity.getPackageName());
                 System.out.printf("Default picture Default Name: %s, was it found %d\n", "default"+character.toLowerCase(), resource);
             }
-            img.setImageResource(resource);
-            TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(200, 200);
-            img.setLayoutParams(layoutParams);
+
+            Picasso.with(this.getContext()).load(resource).resize(200,200).into(img);
+//            img.setImageResource(resource);
+//            TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(100, 100);
+//            img.setLayoutParams(layoutParams);
             tb_row.addView(img);
 
             TextView tvf_0 = new TextView(this.getContext());
