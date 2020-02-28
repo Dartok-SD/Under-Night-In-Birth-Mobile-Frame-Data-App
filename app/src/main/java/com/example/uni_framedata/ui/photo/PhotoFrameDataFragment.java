@@ -94,7 +94,7 @@ public class PhotoFrameDataFragment extends Fragment {
                 System.out.printf("Default picture Default Name: %s, was it found %d\n", "default"+character.toLowerCase(), resource);
             }
 
-            Picasso.with(this.getContext()).load(resource).resize(200,200).into(img);
+            Picasso.with(this.getContext()).load(resource).resize(0,200).into(img);
 //            img.setImageResource(resource);
 //            TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(100, 100);
 //            img.setLayoutParams(layoutParams);
